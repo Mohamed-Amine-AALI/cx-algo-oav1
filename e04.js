@@ -1,5 +1,5 @@
 function count(array, charToCount) {
-    var compteur = 0;
+    let compteur = 0;
     array.forEach(element => {
         if (element == charToCount)
             compteur++;
@@ -32,3 +32,16 @@ function max(array) {
 }
 
 /* console.log(max(['15', '11', '9', '12', '19'])); */
+
+function diff(array) {
+    let largest_deviation = 0;
+    array.forEach((element, i) => {
+        for (let index = i+1; index < array.length; index++) {
+            if (largest_deviation < Math.abs(element - array[index]))
+                largest_deviation = Math.abs(element - array[index]);
+        }
+    });
+    return largest_deviation;
+}
+
+console.log(diff([1, 3, 50, 100, 1000, 10000]));

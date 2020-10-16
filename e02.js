@@ -1,6 +1,6 @@
 function IsAPangrams(str) {
-    var tab = str.toLowerCase().replace(/ /g, "").split('');
-    var set = new Set(tab);
+    let str_no_space = str.toLowerCase().replace(/ /g, "");
+    let set = new Set(str_no_space);
     return (set.size == 26 ? true : false);
 }
 

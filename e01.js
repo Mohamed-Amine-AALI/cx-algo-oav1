@@ -1,7 +1,6 @@
 function HowManyCamelCase(chaine) {
-    var tableau = chaine.split('');
-    var compteur = 0;
-    tableau.forEach(char => {
+    let compteur = 0;
+    chaine.forEach(char => {
         if(char.toUpperCase() == char)
             compteur++;
     });

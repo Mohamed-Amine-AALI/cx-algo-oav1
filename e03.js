@@ -1,12 +1,15 @@
-function marsos(string) {
-    var compteur = 0;
-    var tableau = string.split('');
-    for (let index = 0; index < tableau.length; index = index+3) {
-        var str = tableau[index] + tableau[index+1] + tableau[index+2];
-        if (str != "SOS")
-            compteur++;
+function marsos(str) {
+
+    let sosCompteur = str.length / 3;
+    let correct_str = "SOS".repeat(sosCompteur);
+    let diff = 0;
+
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] != correct_str[i])
+            diff++;
     }
-    return compteur;
+
+    return diff;
 }
 
-console.log(marsos("SOFSOSSISSOW"));
+console.log(marsos("SCFSOSSISSOW"));
