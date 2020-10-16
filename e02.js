@@ -1,12 +1,7 @@
-function IsAPangrams(string) {
-    var tableau = string.replace(/ /g, "").split('');
-    var set = new Set();
-    tableau.forEach(char => {
-        set.add(char.toLowerCase());
-    });
-    if (set.size == 26)
-        return true;
-    return false;
+function IsAPangrams(str) {
+    var tab = str.toLowerCase().replace(/ /g, "").split('');
+    var set = new Set(tab);
+    return (set.size == 26 ? true : false);
 }
 
-console.log(IsAPangrams("The quick brown fox jumpsover the laz dog"))
+console.log(IsAPangrams("The quick brown fox jumpsover the lazy dog"));
